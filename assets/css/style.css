@@ -142,28 +142,33 @@ float: left;
 .column2 .image-hover {
   position: relative;
   /* font-size: 2em; */
-  color: red;
+  color: rgb(107, 106, 106);
   white-space: auto;
   display: inline-block;
+  
 }
 
 .column2 .image-hover > img,
 .column2 .image-hover > figure { 
   position: absolute;
+  color: black;
   top: 100%;
+ 
 
-  width: 200px;
+  width: 500px;
 
   display: none;
 }
 .column2 .image-hover > figure > * { 
-  width: 200px;
+  width: 500px;
   height: auto;
+  
 }
 .column2 .image-hover:hover > img,
 .column2 .image-hover:hover > figure { 
   display: inline-block;
   z-index: +1;
+ 
 }
 
 
