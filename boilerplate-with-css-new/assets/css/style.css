@@ -1,0 +1,524 @@
+@charset "UTF-8";
+
+
+@font-face {
+  font-family: 'FranciscoLucas';
+  src: url(../fonts/FranciscoLucass/flllna2u-webfont.woff);
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'MIASMA';
+  src: url(../fonts/MIASMA__.TTF);
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@import url('https://fonts.cdnfonts.com/css/questa'); 
+
+/* @FONT FACE (enable the use of 'custom fonts' inside your document) */
+
+/* 
+  You can use 'fontsquirrel' (https://www.fontsquirrel.com) 
+  or 'transfonter' (https://transfonter.org)
+  to generate your own font for the web from .ttf or .oft files 
+*/
+
+html {
+}
+
+.researchquestion {
+  text-align: center;
+  padding-left: 20rem;
+  padding-right: 10rem;
+  margin-bottom: 15rem;
+}
+
+
+.abstract {
+  text-align: center;
+  padding-left: 20rem;
+  padding-right: 10rem;
+  margin-bottom: 15rem;
+}
+
+.bibliography {
+  text-align: center;
+  padding-left: 20rem;
+  padding-right: 10rem;
+  margin-bottom: 15rem;
+}
+
+.footnotes{
+  position:absolute;
+  width:calc(100vw - 40rem);
+  left:80%;
+  font-family: "Georgia";
+  font-size: 0.9rem;
+  width: 12rem;
+  color:darkslategray;
+}
+
+
+body {
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10,0%;
+  padding-right: 10,0%;
+  font-family: "Georgia";
+  background-color:azure;
+  color: #111;
+  max-width: 1400px;
+  counter-reset: sidenote-counter;
+
+}
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.5s ease;
+}
+
+.container {
+/* display: flex; */
+flex: 1;
+width: 100vw;
+}
+
+.column1, .column2, .column3 {
+
+  padding: 20px;
+}
+
+.column1 {
+/*  background-color: #f0f0f0;  Background color for the first column */
+  position: sticky;
+top: 0.875rem;
+width: 15%;
+align-self: flex-start;
+
+float: left;
+}
+
+.column1 ul a {
+  color: black;
+  text-decoration: none;
+}
+.column1 ul a:hover {
+  text-decoration: underline;
+}
+.column1 ul a.active {
+  color: brown;
+  font-size: 17px;
+}
+
+.column2 {
+/*   background-color: #e0e0e0; /* Background color for the second column */
+  padding-inline: 0;
+  width: 100%;
+}
+
+.column2 section {
+  padding-inline: calc(15% + 20px) calc( 25% + 20px);
+}
+.column2 section h2:first-child {
+  margin-top: 0;
+}
+.column2 .transition {
+  --from: transparent;
+  --to: transparent;
+
+  height: 600px;
+  margin: 0;
+  background-image: linear-gradient(180deg, var(--from), var(--to));
+}
+
+.column2 .image-hover {
+  position: relative;
+  /* font-size: 2em; */
+  color: red;
+  white-space: auto;
+  display: inline-block;
+}
+
+.column2 .image-hover > img,
+.column2 .image-hover > figure { 
+  position: absolute;
+  top: 100%;
+
+  width: 200px;
+
+  display: none;
+}
+.column2 .image-hover > figure > * { 
+  width: 200px;
+  height: auto;
+}
+.column2 .image-hover:hover > img,
+.column2 .image-hover:hover > figure { 
+  display: inline-block;
+  z-index: +1;
+}
+
+
+.column3 {
+/*  background-color:antiquewhite;  Background color for the second column */
+  width: 25%;
+  font-size: 14px;
+
+}
+/* element.style {
+  display: block;
+}
+.footnotes {
+  order: 1;
+  position: sticky;
+  top: 0;
+  height: 100%;
+  padding-top: 8.5rem;
+  width: 25vw;
+  font-size: 0.8rem;
+   background-color: aqua; 
+} */
+
+
+/*
+#chapter-1 {
+  background-color: #f0f0f0; /* Stel de achtergrondkleur van het eerste hoofdstuk in 
+} */
+
+/*
+#chapter-2 {
+  background-color: #eaeaea; /* Stel de achtergrondkleur van het tweede hoofdstuk in 
+} */
+
+/* 
+#chapter-3 {
+  background-color: #f2e8e8; /* Stel de achtergrondkleur van het eerste hoofdstuk in 
+} */
+
+/*
+#chapter-4 {
+  background-color: #eaeaea; /* Stel de achtergrondkleur van het tweede hoofdstuk in 
+} */
+
+/*
+#conclusion {
+  background-color: #f4d4d4; /* Stel de achtergrondkleur van het eerste hoofdstuk in 
+} */
+
+/* 
+#bibliography {
+  background-color: #f6c9c9; /* Stel de achtergrondkleur van het tweede hoofdstuk in 
+} */
+
+
+
+/* Adds dark mode */
+@media (prefers-color-scheme: dark) {
+  body {
+      background-color: #151515;
+      color: #ddd;
+  }
+}
+
+
+/* VARIABLES */
+
+:root {
+  
+  /* Color values */
+  --color-background: rgb(191, 243, 180);
+  --color-text: rgba(0,0,0,1);
+  --color-text-link: rgba(0,0,255,0.8);
+  --color-text-link-hover: rgba(0,0,255,0.4);
+
+  /* Font values */
+  --font-family: 'Your Font Name', 'Helvetica', 'Arial', sans-serif;
+  --font-size: 16px;
+
+  /* Margin value */
+  --margin: .5rem;
+}
+
+
+
+/* GENERAL STYLES */
+/* html, body { height: 100% } */
+html {
+  font: var(--font-size) var(--font-family);
+  color: var(--color-text);
+/*  background-color: var(--color-background); */
+
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+/* overflow-y: auto; */
+}
+
+/*body {
+  position:relative;
+  background-color: var(--color-background);
+  font: var(--font-size) var(--font-family);
+  color: var(--color-text);
+  text-align: center;
+  width:100%;
+  height:auto;
+  font-size: 14px;
+  overflow-y:auto;
+
+  
+  
+} */
+
+a {
+  font-size: 16px;
+}
+
+a:hover {
+  color: var(--color-text-link-hover);
+  text-decoration: underline;
+}
+
+h1{
+  /* h1 style */
+ 
+  
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h2{
+  /* h2 style */
+  border: 12px sold rgb(46, 50, 167);
+  font-family: 'MIASMA';
+  font-size: 25px;
+  letter-spacing: 2px;
+  margin-top: 5rem;
+  /*    background-color: blueviolet; */
+}
+
+h3{
+  /* h3 style */
+ 
+}
+
+h4, h5, h6{
+  /* h4-h5-h6 style */
+}
+
+p{
+  /* paragraph style */
+  background-color: browns; 
+  padding-bottom: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+ol, ul{
+  /* ordered list and unordered list styles */
+}
+
+blockquote{
+  /* blockquote element style */
+}
+
+hr{
+  /* horizontal rule style */
+}
+
+
+
+/* PAGE STYLES */
+
+/* page structure */
+
+div.page-wrapper {
+  /* the element that 'wraps' everything */
+  padding: var(--margin);
+  padding-right: 20%;
+  padding-left: 20%;
+  text-align: center;
+  
+}
+
+/* navigation */
+ 
+nav{
+  
+}
+
+/* content */
+
+main{
+ 
+}
+
+summary{
+  
+}
+
+
+
+
+
+
+/* UTILITY CLASSES */
+
+/* hide desktop mobile etc */
+
+.desktop-only {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+}
+
+
+
+
+
+/* WEBSITE MEDIA QUERIES */
+
+/* styles for 'mobile', screen sizes up to 779px, should covers 'mobile' and 'tablet' */
+/* style this one first and then use the subsequent ones in a cascading way (from general to specific) */
+
+@media (max-width: 779px) {
+
+  /* your 'mobile' overriding css properties here */
+
+
+
+  /* utility classes, mobile */
+
+  .desktop-only{
+    display:none;
+  }
+
+  .mobile-only{
+    display:block;
+  }
+
+}
+
+body {
+  font-size: 16px;
+}
+
+.page-wrapper {
+  margin: 0 4rem;
+}
+
+header {
+  /* margin: 0 5rem; */
+  text-align:center;
+   padding: 1rem 0; 
+   padding-top: 7rem 0;
+  width: 100vw;
+}
+
+header > p {
+  position:relative;
+color:black;
+font-size: 2rem;
+padding-bottom: 12rem;
+padding-left: 2rem;
+font-family: 'MIASMA';
+letter-spacing: 4px;
+}
+
+
+header > h1 {
+/*  @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1; */
+font-size: 8rem;
+margin: auto;
+padding-top: 6rem;
+padding-bottom: 2rem;
+font-family: 'FranciscoLucas';
+
+}
+
+p {
+  line-height: 1.5;
+  padding-bottom: 60px;
+}
+
+
+
+h2 {
+  font-weight: bold;
+  padding: 4rem 0;
+  padding-top: 0px;
+  padding-bottom: 20px;
+}
+
+figure {
+  margin: 0rem 0rem 1rem;
+}
+figcaption {
+  margin-block: .5rem;
+  font-style: italic;
+}
+figcaption > p {
+  color:grey;
+}
+
+blockquote {
+ margin: 3rem 3rem 3rem 5rem;
+}
+
+
+/* use this query to apply style changes to smaller smartphones sizes (like an iPhone 5S or SE 2016), max size of 339px */
+
+@media (max-width: 339px) {
+
+  /* your overriding css properties here */
+
+}
+
+
+
+/* use this query to apply style changes for 'mobile' screen sizes that are flipped in 'landscape' mode */
+
+@media (max-width: 779px) and (orientation: landscape) {
+  
+
+   /* your overriding css properties here */
+
+}
+
+html {
+  font-size: 16px;
+}
+/*@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+  }
+}
+ @media screen and (min-width: 1000px) {
+  html {
+    font-size: 22px;
+    
+  }
+} /*
+
+/*body {
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+} /*
+
+
+
+/* use this query to apply style for 'small' desktop screens */
+
+@media (min-width: 780px) and (max-width: 992px) {
+
+  /* your overriding css properties here */
+
+}
+
+

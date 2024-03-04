@@ -1,0 +1,45 @@
+body {
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+.page-wrapper {
+    margin: 0 18rem;
+}
+
+header {
+    margin: 0 5rem;
+    text-align:center;
+    padding: 1rem 0;
+}
+
+header > h1 {
+font-size: 4rem;
+padding: 1rem 0;
+}
+
+p {
+    line-height: 1.5;
+}
+
+header > p {
+color: green;
+font-size: 1.5rem;
+}
+
+h2 {
+    font-weight: bold;
+    padding: 4rem 0;
+}
+
+figure {
+    margin: 4rem 4rem;
+}
+
+figcaption > p {
+    color:grey;
+}
+
+blockquote {
+   margin: 3rem 3rem 3rem 5rem;
+}
