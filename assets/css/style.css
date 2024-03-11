@@ -27,22 +27,127 @@
   to generate your own font for the web from .ttf or .oft files 
 */
 
+:root {
+  
+  /* Color values */
+  --color-background:rgb(244, 232, 214);
+  --color-text: rgba(0,0,0,1);
+  --color-text-link: rgba(0,0,255,0.8);
+  --color-text-link-hover: rgba(0,0,255,0.4);
+
+  /* Font values */
+  --font-family: 'Your Font Name', 'Helvetica', 'Arial', sans-serif;
+  --font-size: 16px;
+
+  /* Margin value */
+  --margin: .5rem;
+
+
+
+
+  --steps: 16; 
+  --background: #1d1f20;
+}
+
+
+
+/* GENERAL STYLES */
 html {
+  font: var(--font-size) var(--font-family);
+  color: var(--color-text);
+
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
 }
 
-.researchquestion {
+
+@-webkit-keyframes typing { from { width: 0; } }
+@-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
+
+/* h2 { 
+	border-right: .1em solid black;
+	width: 100%; 
+	width: 23ch;
+	margin: 0.5em;
+	white-space: nowrap;
+	overflow: hidden;
+	-webkit-animation: typing 2s steps(21, end),
+	           blink-caret .5s step-end infinite alternate;
+} */
+
+
+
+
+
+
+
+
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  /* width: 87.5%; */
+  /*font-family: "Georgia"; */
+  background-color: azure;
+  color:black;
+  /* max-width: 1400px; */
+
+  counter-reset: sidenote-counter;
+  transition: background-color 0.5s ease;
+
+}
+
+a {
+  font-size: 16px;
+}
+
+a:hover {
+  color: var(--color-text-link-hover);
+  text-decoration: underline;
+}
+
+h1{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h2{
+  border: 12px sold rgb(46, 50, 167);
+  font-family: 'MIASMA';
+  font-size: 55px;
+  letter-spacing: 2px;
+  margin-top: 5rem;
+}
+
+p{
+  /* paragraph style */
+  background-color: browns; 
+  padding-bottom: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-wrap: pretty;
+}
+
+
+/* .researchquestion {
   text-align: center;
   padding-left: 20rem;
   padding-right: 10rem;
   margin-bottom: 15rem;
-}
+} */
 
 
+.researchquestion,
 .abstract {
-  text-align: center;
-  padding-left: 20rem;
-  padding-right: 10rem;
+  /* padding-left: 20rem;
+  padding-right: 10rem; */
+  width: min(100%, 80ch);
+  padding-inline: 2rem;
+  margin-inline: auto;
   margin-bottom: 15rem;
+
+  text-align: center;
+
 }
 
 .bibliography {
@@ -63,26 +168,13 @@ html {
 }
 
 
-body {
-  width: 87.5%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 10,0%;
-  padding-right: 10,0%;
-  font-family: "Georgia";
-  background-color:azure;
-  color: #111;
-  max-width: 1400px;
-  counter-reset: sidenote-counter;
-
+label.sidenote-number {
+  display: inline-block;
+  max-height: 2rem;
 }
 
-
-
-body {
-  margin: 0;
-  padding: 0;
-  transition: background-color 0.5s ease;
+.sidenote-number {
+  counter-increment: sidenote-counter;
 }
 
 .container {
@@ -102,8 +194,11 @@ width: 100vw;
 top: 0.875rem;
 width: 15%;
 align-self: flex-start;
-
+padding-left:2rem;
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-style: italic;
 float: left;
+
 }
 
 .column1 ul a {
@@ -134,7 +229,7 @@ float: left;
   --from: transparent;
   --to: transparent;
 
-  height: 600px;
+  height: 350px;
   margin: 0;
   background-image: linear-gradient(180deg, var(--from), var(--to));
 }
@@ -152,6 +247,8 @@ float: left;
 .column2 .image-hover > figure { 
   position: absolute;
   color: black;
+  box-sizing: border-box;
+  
   top: 100%;
  
 
@@ -159,6 +256,7 @@ float: left;
 
   display: none;
 }
+
 .column2 .image-hover > figure > * { 
   width: 500px;
   height: auto;
@@ -167,7 +265,14 @@ float: left;
 .column2 .image-hover:hover > img,
 .column2 .image-hover:hover > figure { 
   display: inline-block;
+  box-sizing: border-box;
+ 
   z-index: +1;
+  background-color: white;
+  padding: 20px;
+  font-size: 0.8rem;
+margin-right: 5%;
+
  
 }
 
@@ -224,124 +329,6 @@ float: left;
 } */
 
 
-
-/* Adds dark mode */
-@media (prefers-color-scheme: dark) {
-  body {
-      background-color: #151515;
-      color: #ddd;
-  }
-}
-
-
-/* VARIABLES */
-
-:root {
-  
-  /* Color values */
-  --color-background: rgb(191, 243, 180);
-  --color-text: rgba(0,0,0,1);
-  --color-text-link: rgba(0,0,255,0.8);
-  --color-text-link-hover: rgba(0,0,255,0.4);
-
-  /* Font values */
-  --font-family: 'Your Font Name', 'Helvetica', 'Arial', sans-serif;
-  --font-size: 16px;
-
-  /* Margin value */
-  --margin: .5rem;
-}
-
-
-
-/* GENERAL STYLES */
-/* html, body { height: 100% } */
-html {
-  font: var(--font-size) var(--font-family);
-  color: var(--color-text);
-/*  background-color: var(--color-background); */
-
-  scroll-behavior: smooth;
-  scroll-padding-top: 2rem;
-/* overflow-y: auto; */
-}
-
-/*body {
-  position:relative;
-  background-color: var(--color-background);
-  font: var(--font-size) var(--font-family);
-  color: var(--color-text);
-  text-align: center;
-  width:100%;
-  height:auto;
-  font-size: 14px;
-  overflow-y:auto;
-
-  
-  
-} */
-
-a {
-  font-size: 16px;
-}
-
-a:hover {
-  color: var(--color-text-link-hover);
-  text-decoration: underline;
-}
-
-h1{
-  /* h1 style */
- 
-  
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-h2{
-  /* h2 style */
-  border: 12px sold rgb(46, 50, 167);
-  font-family: 'MIASMA';
-  font-size: 25px;
-  letter-spacing: 2px;
-  margin-top: 5rem;
-  /*    background-color: blueviolet; */
-}
-
-h3{
-  /* h3 style */
- 
-}
-
-h4, h5, h6{
-  /* h4-h5-h6 style */
-}
-
-p{
-  /* paragraph style */
-  background-color: browns; 
-  padding-bottom: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  
-}
-
-ol, ul{
-  /* ordered list and unordered list styles */
-}
-
-blockquote{
-  /* blockquote element style */
-}
-
-hr{
-  /* horizontal rule style */
-}
-
-
-
-/* PAGE STYLES */
-
-/* page structure */
-
 div.page-wrapper {
   /* the element that 'wraps' everything */
   padding: var(--margin);
@@ -350,27 +337,6 @@ div.page-wrapper {
   text-align: center;
   
 }
-
-/* navigation */
- 
-nav{
-  
-}
-
-/* content */
-
-main{
- 
-}
-
-summary{
-  
-}
-
-
-
-
-
 
 /* UTILITY CLASSES */
 
@@ -430,23 +396,43 @@ header {
 header > p {
   position:relative;
 color:black;
-font-size: 2rem;
+font-size: min(2rem, 4vw); /* 2rem; */
 padding-bottom: 12rem;
-padding-left: 2rem;
+padding-inline: 2rem;
 font-family: 'MIASMA';
 letter-spacing: 4px;
+text-wrap: balance;
 }
+
+
+
+
+
 
 
 header > h1 {
 /*  @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1; */
-font-size: 8rem;
+width: min(20ch, 100%);
+text-wrap: balance;
+font-size: 10vw;/* 8rem; */
 margin: auto;
 padding-top: 6rem;
 padding-bottom: 2rem;
 font-family: 'FranciscoLucas';
-
 }
+/* Dit is waar de animatie in werking word gezet
+position: relative;
+overflow: hidden;
+background: linear-gradient(90deg, #000, rgb(161, 161, 161), #000);
+background-repeat: no-repeat;
+background-size: 80%;
+animation: animate 15s linear infinite;
+-webkit-background-clip: text;
+-webkit-text-fill-color: rgba(255, 255, 255, 0);
+ */
+
+/* s */
+
 
 p {
   line-height: 1.5;
@@ -457,17 +443,35 @@ p {
 
 h2 {
   font-weight: bold;
-  padding: 4rem 0;
+  padding-bottom: 40px;
   padding-top: 0px;
-  padding-bottom: 20px;
+  letter-spacing: 6px;
+ 
+  text-align: center;
+}
+
+h3 {
+  padding-bottom: 5em;
+  text-align: center;
+  max-width: 50ch; /* 55 characters */
+  margin: 0 auto; /* Horizontaal centreren */
+ font-size: 23px;
+ font-family:Georgia, 'Times New Roman', Times, serif;
+  
 }
 
 figure {
   margin: 0rem 0rem 1rem;
+  margin-block: .5rem;
+  font-style: italic;
+  color:grey;
+  font-size: 0.9rem;
 }
 figcaption {
   margin-block: .5rem;
   font-style: italic;
+padding-right: 2.5rem;
+
 }
 figcaption > p {
   color:grey;
@@ -527,3 +531,323 @@ html {
 }
 
 
+
+
+/* Adds dark mode */
+@media (prefers-color-scheme: dark) {
+  body {
+      background-color: #151515;
+      color: #ddd;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .column1 {
+    top: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: var(--color-background);
+  }
+  .column1 ul {
+    /* width: min(100%, 60ch); */
+    margin-inline: auto;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem 1rem;
+  }
+
+.column2 {
+width: 100%;
+overflow:hidden;
+padding: 0;
+margin: 0;
+}
+
+
+  .column2 section {
+    padding-left: 2rem;
+    padding-inline: calc(1% + 20px) calc(1% + 20px);
+  }
+  }
+
+
+@media screen and (max-width: 840px) {
+
+  .column1 ul {
+    margin-inline: 0;
+/*   width: min(100%, 60ch);
+   justify-content: flex-start; */
+  }
+}
+@media (max-width: 760px) {
+  
+label {
+  cursor: pointer; }
+}
+
+@media only screen and (max-width: 767px) {
+  .column3 {
+    display: none;
+  }
+  
+}
+
+@media only screen and (max-width: 767px) {
+.column2 .image-hover > img,
+.column2 .image-hover > figure { 
+  position: relative;
+  color: black;
+  top: 100%;
+
+  width: 100%; /* Afbeeldingen nemen de volledige breedte van de container in op mobiele apparaten */
+  height: auto;
+}
+}
+
+@media only screen and (max-width: 767px) {
+.column2 .image-hover > figure > * {
+
+  width: 80vw; /* Afbeeldingen nemen de volledige breedte van de container in op mobiele apparaten */
+  height: auto;
+  
+  
+}
+}
+
+@media (max-width: 768px) {
+  /* Verberg het woord "Chapter" */
+  .chapter {
+    font-size: 0; /* Maak de tekstgrootte nul */
+  }
+
+  /* Toon alleen de nummers 1 t/m 5 */
+  .chapter:before {
+    content: attr(data-chapter-number); /* Gebruik het data-attribuut voor de nummers */
+    font-size: initial; /* Herstel de oorspronkelijke tekstgrootte */
+  }
+}
+
+
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  a:link, .tufte-underline, .hover-tufte-underline:hover {
+      background-position-y: 87%, 87%, 87%;
+  }
+}
+
+a:link::selection,
+a:link::-moz-selection {
+  text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
+  background: #b4d5fe;
+}
+
+/* Sidenotes, margin notes, figures, captions */
+img {
+  max-width: 100%;
+}
+
+.sidenote,
+.marginnote {
+  display: block;
+  position:absolute;
+  width:calc(100vw - 40rem);
+  left:80%;
+  font-family: "Georgia";
+  font-size: 0.9rem;
+  width: 12rem;
+  color:darkslategray;
+}
+
+.sidenote-number {
+  counter-increment: sidenote-counter;
+}
+
+.sidenote-number:after,
+.sidenote:before {
+  font-family: et-book-roman-old-style;
+  position: relative;
+  vertical-align: baseline;
+  color: darkslategray;
+}
+
+.sidenote-number:after {
+  content: counter(sidenote-counter);
+  font-size: 1rem;
+  top: -0.5rem;
+  left: 0.1rem;
+}
+
+.sidenote:before {
+  content: counter(sidenote-counter) " ";
+  font-size: 1rem;
+  top: -0.5rem;
+  width:calc(100vw - 40rem);
+}
+
+blockquote .sidenote,
+blockquote .marginnote {
+  margin-right: -82%;
+  min-width: 59%;
+  text-align: left;
+}
+
+div.fullwidth,
+table.fullwidth {
+  width: 100%;
+}
+
+div.table-wrapper {
+  overflow-x: auto;
+  font-family: "Trebuchet MS", "Gill Sans", "Gill Sans MT", sans-serif;
+}
+
+.sans {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  letter-spacing: .03em;
+}
+
+code, pre > code {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 1.0rem;
+  line-height: 1.42;
+  -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS. See https://github.com/edwardtufte/tufte-css/issues/81#issuecomment-261953409 */
+}
+
+.sans > code {
+  font-size: 1.2rem;
+}
+
+h1 > code,
+h2 > code,
+h3 > code {
+  font-size: 0.80em;
+}
+
+.marginnote > code,
+.sidenote > code {
+  font-size: 1rem;
+}
+
+pre > code {
+  font-size: 0.9rem;
+  width: 52.5%;
+  margin-left: 2.5%;
+  overflow-x: auto;
+  display: block;
+}
+
+pre.fullwidth > code {
+  width: 90%;
+}
+
+.fullwidth {
+  max-width: 90%;
+  clear:both;
+}
+
+span.newthought {
+  font-variant: small-caps;
+  font-size: 1.2em;
+}
+
+input.margin-toggle {
+  display: none;
+}
+
+label.sidenote-number {
+  display: inline;
+}
+
+label.margin-toggle:not(.sidenote-number) {
+  display: none;
+}
+
+.iframe-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+.iframe-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 760px) {
+  
+
+  hr,
+  section > p,
+  section > footer,
+  section > table {
+      width: 100%;
+  }
+
+  pre > code {
+      width: 97%;
+  }
+
+  section > dl,
+  section > ol,
+  section > ul {
+      width: 90%;
+  }
+
+  figure {
+      max-width: 90%;
+  }
+
+  figcaption,
+  figure.fullwidth figcaption {
+      margin-right: 0%;
+      max-width: none;
+  }
+
+  blockquote {
+      margin-left: 1.5em;
+      margin-right: 0em;
+  }
+
+  blockquote p,
+  blockquote footer {
+      width: 100%;
+  }
+
+  label.margin-toggle:not(.sidenote-number) {
+      display: inline;
+  }
+
+  .sidenote,
+  .marginnote {
+      display: none;
+  }
+
+  .margin-toggle:checked + .sidenote,
+  .margin-toggle:checked + .marginnote {
+      display: block;
+      float: left;
+      left: 1rem;
+      clear: both;
+      width: 95%;
+      margin: 1rem 2.5%;
+      vertical-align: baseline;
+      position: relative;
+  }
+
+  label {
+      cursor: pointer;
+  }
+
+  div.table-wrapper,
+  table {
+      width: 85%;
+  }
+
+  img {
+      width: 100%;
+  }
+}
