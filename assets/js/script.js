@@ -99,3 +99,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
 */
 
+
+
+
+/*
+
+window.onload = function() {
+    if (window.innerWidth <= 650) {
+        var chapters = document.querySelectorAll('.column1 ul li a');
+        chapters.forEach(function(chapter) {
+            var chapterText = chapter.textContent;
+            var chapterNumber = chapterText.split(' ')[1]; // Verkrijg alleen het nummer na "Chapter"
+            chapter.textContent = chapterNumber;
+        });
+    }
+};
+
+*/

@@ -481,6 +481,41 @@ blockquote {
  margin: 3rem 3rem 3rem 5rem;
 }
 
+#hamburger-menu {
+  /* Zorg ervoor dat het menu bovenop andere elementen wordt weergegeven */
+  z-index: 9999;
+}
+
+.hamburger {
+  display: none;
+}
+/* Als er een overlay is, zorg ervoor dat het menu klikbaar blijft */
+.overlay {
+  /* Zorg ervoor dat het menu bovenop de overlay wordt weergegeven */
+  z-index: 9998;
+}
+
+.column1 ul {
+  display: block; /* Toon standaard de inhoudsopgave */
+}
+
+.column1 ul {
+  list-style-type: none; /* Verwijder de standaard lijststijl */
+  padding: 0; /* Verwijder standaard padding */
+}
+
+.column1 ul li {
+  margin-bottom: 10px; /* Voeg wat ruimte toe tussen de lijstitems */
+}
+
+.column1 ul li a {
+  text-decoration: none; /* Verwijder de standaard onderstreping van links */
+  color: #333; /* Stel de tekstkleur in */
+}
+
+.column1 ul li a:hover {
+  color: #555; /* Verander de tekstkleur wanneer erover wordt bewogen */
+}
 
 /* use this query to apply style changes to smaller smartphones sizes (like an iPhone 5S or SE 2016), max size of 339px */
 
@@ -578,6 +613,25 @@ margin: 0;
 /*   width: min(100%, 60ch);
    justify-content: flex-start; */
   }
+}/* Mediaquery voor mobiele schermen */
+@media only screen and (max-width: 840px) {
+  .hamburger {
+    display: block; /* Toon het hamburgermenu op mobiele schermen */
+  }
+  .column1 {
+    width: 100%;
+  }
+  .column1:has(ul.visible) {
+    width: auto;
+  }
+  .column1 ul {
+    display: none; /* Verberg de inhoudsopgave op mobiele schermen */
+  }
+  .column1 ul.visible {
+    margin-top: 2rem;
+    display: block;
+    margin-bottom: 2rem;
+  }
 }
 @media (max-width: 760px) {
   
@@ -614,18 +668,6 @@ label {
 }
 }
 
-@media (max-width: 768px) {
-  /* Verberg het woord "Chapter" */
-  .chapter {
-    font-size: 0; /* Maak de tekstgrootte nul */
-  }
-
-  /* Toon alleen de nummers 1 t/m 5 */
-  .chapter:before {
-    content: attr(data-chapter-number); /* Gebruik het data-attribuut voor de nummers */
-    font-size: initial; /* Herstel de oorspronkelijke tekstgrootte */
-  }
-}
 
 
 
